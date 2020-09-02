@@ -1,0 +1,24 @@
+.intro {
+    height: 100vh;
+    width: 100vw;
+    .introText {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translate(-15%, -50%);
+        font-family: 'Poppins', sans-serif;
+        .bold {
+            font-weight: 500;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        div {
+            h2 {
+                font-weight: 300;
+            }
+        }
+        
+    }
+}
