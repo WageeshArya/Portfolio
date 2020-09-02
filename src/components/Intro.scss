@@ -1,9 +1,11 @@
+@import '../App.scss';
 .intro {
     height: 100vh;
     width: 100vw;
     .introText {
         position: absolute;
-        top: 50%;
+        overflow: hidden;
+        top: 30%;
         left: 15%;
         transform: translate(-15%, -50%);
         font-family: 'Poppins', sans-serif;
@@ -15,10 +17,85 @@
             font-weight: 300;
         }
         div {
+            overflow: hidden;
             h2 {
                 font-weight: 300;
+                margin-bottom: 0;
             }
         }
-        
+    }
+    .introduction {
+        position: absolute;
+        bottom: 0%;
+        height: 50vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        background: #4CB8C4;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3CD3AD, #4CB8C4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        .skills {
+            color: rgb(41, 84, 88);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            @include flexCenter();
+            height: 50vh;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 2rem;
+            padding-left: 2rem;
+            .skillpanel {
+                @include skillpanels();
+                @include skillback();
+            }
+        }
+        .links {
+            color: rgb(41, 84, 88);
+            .linksDiv {
+                display: flex;
+                width: 75%;
+                margin: 3rem;
+                i {
+                    padding: 1rem;
+                    @include skillback();
+                    margin: 0 1rem;
+                    height: auto;
+                    border-radius: 50%;
+                    font-size: 1rem;
+                }
+                button {
+                    text-align: center;
+                    background-color: #3CD3AD;
+                    border: none;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                    padding: 0.5rem 0 0.5rem 1rem;
+                    border-radius: 50px;
+                    @include skillback();
+                    i {
+                        box-shadow:  2px 2px 10px #419ca7, 
+                         -2px -2px 10px #3CD3AD;
+                    }
+                }
+                div {
+                    @include flexCenter();
+                }
+            }
+            .scrollDown {
+                @include flexCenter();
+                font-size: 2rem;
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+            }
+        }
+        @media(max-width: 1310px) {
+            grid-template-columns: none;
+            grid-template-rows: 2fr 1fr;
+            .skills {
+                height: auto;
+                margin-right: 2rem;
+            }
+        }
     }
 }

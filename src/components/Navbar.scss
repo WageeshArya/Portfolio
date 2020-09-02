@@ -1,9 +1,7 @@
-@mixin flexCenter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@import '../App.scss';
 nav {
+    z-index: 5;
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;

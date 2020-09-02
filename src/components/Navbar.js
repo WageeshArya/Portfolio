@@ -7,17 +7,12 @@ const Navbar = () => {
     gsap.registerPlugin(ScrollTrigger);
     let tl = new TimelineLite();
     useEffect(() => {
-        tl.to('.logo span', {
+        gsap.to('.logo span', {
             opacity: 1,
             x: 30,
             stagger: 0.3
-            // scrollTrigger: {
-            //     start: 'bottom center+=100',
-            //     end: 'bottom bottom',
-            //     markers: true,
-            //     toggleActions: 'play none none reverse'
-            // }
-        })
+        });
+        // eslint-disable-next-line
     },[]);
     return (
         <nav>
@@ -31,6 +26,12 @@ const Navbar = () => {
                     <li>Skills</li>
                     <li>Projects</li>
                     <li>Contact Me</li>
+                    <li>
+                        <select name="language" id="language">
+                            <option value="english">English</option>
+                            <option value="japanese">日本語</option>
+                        </select>
+                    </li>
                 </div>
                 
             </ul>

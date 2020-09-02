@@ -1,0 +1,54 @@
+@import  '../App.scss';
+.techSkills {
+  height: 100vh;
+  .skillHeader {
+    padding-top: 10vh;
+    margin-bottom: 1rem;
+    font-family: 'Exo', sans-serif;
+    
+    @include flexCenter();
+    h1 {
+      text-decoration: underline;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      background-color: orange;
+      display: inline;
+    }
+  }
+  
+  .skillDivs {
+    font-family: 'Poppins', sans-serif;    
+    text-align: center;
+    @include skillpanels();
+    height: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .tech {
+      height: 100%;
+      display: grid;
+      &:nth-of-type(1), &:nth-last-of-type(2) {
+        border-right: 5px solid orange;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      ul {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        li {
+          line-height: 1rem;
+          font-size: 1rem;
+          img {
+            height: 50px;
+            width: 50px;
+          }
+      }
+    }
+    
+    
+    }
+  }
+}

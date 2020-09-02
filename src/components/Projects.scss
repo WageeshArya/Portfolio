@@ -1,0 +1,47 @@
+.Projects {
+  font-family: 'Poppins', sans-serif;
+  .projectsDiv {
+    // width: 60%;
+    // margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    .project {
+      display: grid;
+      margin: 2rem;
+      border-radius: 20px;
+      padding: 2rem;
+      grid-template-rows: 1fr 2fr;
+      border-radius: 50px;
+      background: linear-gradient(145deg, #e6e6e6, #ffffff);
+      box-shadow:  20px 20px 60px #d9d9d9, 
+                  -20px -20px 60px #ffffff;
+      .video {
+        video {
+          height: 20vh;
+        }
+      }
+      .projectDetails {
+        margin: 0 1rem;
+        h1 {
+          text-align: center;
+          margin-top: 0;
+          font-weight: 700;
+        }
+        .projectDetailsGrid {
+          .technologies {
+            h3 {
+              font-weight: 400;
+            }
+            ul {
+              font-weight: 300;
+              // list-style: disc;
+              li {
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
