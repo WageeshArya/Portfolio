@@ -14,11 +14,15 @@ const Skills = () => {
             <li>
               <img src={require('../icons/html.svg')} alt="HTML5"/>
               <p>HTML5</p>
-              </li>
+            </li>
             <li>
               <img src={require('../icons/css.svg')} alt="CSS3"/>
               <p>CSS3</p>
-              </li>
+            </li>
+            <li>
+              <img src={require('../icons/sass.svg')} alt="CSS3"/>
+              <p>Sass</p>
+            </li>
             <li>
               <img src={require('../icons/javascript.svg')} alt="Javascript"/>
               <p>Javascript</p>

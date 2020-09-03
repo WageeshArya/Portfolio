@@ -1,47 +1,96 @@
+@import '../App.scss';
 .Projects {
   font-family: 'Poppins', sans-serif;
+  .projectsHeader {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+  }
   .projectsDiv {
-    // width: 60%;
-    // margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    width: 85%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2,1fr);
     .project {
       display: grid;
-      margin: 2rem;
+      margin: 4rem 3rem;
       border-radius: 20px;
       padding: 2rem;
-      grid-template-rows: 1fr 2fr;
       border-radius: 50px;
-      background: linear-gradient(145deg, #e6e6e6, #ffffff);
       box-shadow:  20px 20px 60px #d9d9d9, 
                   -20px -20px 60px #ffffff;
       .video {
+        @include flexCenter();
+        flex-direction: column;
+        h1 {
+          text-align: center;
+          margin-top: 0.5rem;
+          font-size: 2.25rem;
+          font-weight: 700;
+          font-family: 'Roboto Slab', serif;
+        }
         video {
-          height: 20vh;
+          height: 10rem;
+          border: 3px solid black;
+        }
+        .projectLinks {
+          a {
+            button {
+              display: inline-block;
+              padding: 0.5em 1em;
+              text-decoration: none;
+              color: #67c5ff;
+              border: double 4px #67c5ff;
+              border-radius: 3px;
+              background-color: white;
+              margin: 1rem 0.5rem;
+              text-transform: uppercase;
+              transition: all .4s ease;
+              &:hover {
+                cursor: pointer;
+                color: white;
+                background-color: #67c5ff; 
+              }
+              &:focus {
+                outline: none;
+              }
+            }
+            .githubBtn {
+              &:hover {
+                background-color: #00D9A9;
+                border: double 4px #00D9A9;
+              }
+            }
+          }
         }
       }
       .projectDetails {
         margin: 0 1rem;
-        h1 {
-          text-align: center;
-          margin-top: 0;
-          font-weight: 700;
-        }
+        
         .projectDetailsGrid {
-          .technologies {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          .technologies, .features{
             h3 {
-              font-weight: 400;
+              font-weight: 500;
             }
             ul {
               font-weight: 300;
-              // list-style: disc;
+              list-style: none;
+              padding: 0;
               li {
-                
+                font-size: 0.9rem;
               }
             }
           }
         }
       }
     }
+  }
+  .projectEnd {
+    margin: 4rem 4rem;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
   }
 }

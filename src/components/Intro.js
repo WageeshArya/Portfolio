@@ -32,7 +32,13 @@ const Intro = () => {
                 amount: 0.3
             }
         })
-        tl.from(".linksDiv i", {
+        tl.from(".linksDiv button", {
+            x: -50,
+            duration: 0.4,
+            opacity: 0,
+            ease: 'expo.inOut'
+        })
+        .from(".linksDiv i", {
             x: -50,
             skewX: 20,
             opacity: 0,
@@ -44,7 +50,7 @@ const Intro = () => {
             opacity: 0
         })
         // eslint-disable-next-line
-    },[]);
+    },[window.innerWidth]);
 
     return (
         <section className="intro">

@@ -1,0 +1,17 @@
+@import '../App.scss';
+.contactMe {
+  @include flexCenter();
+  width: 100%;
+  height: 100vh;
+  .formDiv {
+    width: 60%;
+    height: 75%;
+    h1 {
+      text-align: center;
+    }
+    form {
+      @include flexCenter();
+      flex-direction: column;
+    }
+  }
+}
