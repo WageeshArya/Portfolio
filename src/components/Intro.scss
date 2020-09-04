@@ -44,9 +44,23 @@
             grid-template-columns: repeat(3,1fr);
             grid-gap: 2rem;
             padding-left: 2rem;
+            @media(max-width: 700px) {
+                grid-gap: 1rem;
+                margin-right: 1rem;
+                margin: 0 1rem;
+                padding: 0;
+            }
             .skillpanel {
                 @include skillpanels();
                 @include skillback();
+                @media(max-width: 700px) {
+                    padding: 0.5rem;
+                }
+                h4 {
+                    @media(max-width: 700px) {
+                        font-size: 0.75rem;
+                    }
+                }
             }
         }
         .links {
@@ -55,30 +69,94 @@
                 display: flex;
                 width: 75%;
                 margin: 3rem;
+                @media(max-width: 1310px) {
+                    margin: 1rem 2rem;
+                }
                 i {
                     padding: 1rem;
                     @include skillback();
                     margin: 0 1rem;
                     height: auto;
                     border-radius: 50%;
-                    font-size: 1rem;
+                    font-size: 1.5rem;
+                    @media(max-width: 550px) {
+                        font-size: 1rem;
+                        margin: 0 0.5rem;
+                    }
+                    @media(max-width: 450px) {
+                        font-size: 0.5rem;
+                    }
                 }
                 button {
                     text-align: center;
                     background-color: #3CD3AD;
                     border: none;
                     font-family: 'Poppins', sans-serif;
-                    font-weight: 500;
+                    font-weight: 700;
                     padding: 0.5rem 0 0.5rem 1rem;
                     border-radius: 50px;
                     @include skillback();
                     i {
                         box-shadow:  2px 2px 10px #419ca7, 
                          -2px -2px 10px #3CD3AD;
+                        font-size: 1.25rem;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #2FB190;
+                            box-shadow:  2px 2px 10px #2FB190,
+                                        -2px -2px 10px #3CD3AD;
+                        }
+                        &:active {
+                            background-color: rgb(36, 134, 110);
+                            box-shadow:  2px 2px 10px #2FB190,
+                                        -2px -2px 10px #2FB190;
+                        }
+                        @media(max-width: 550px) {
+                            font-size: 1rem;
+                        }
+                        @media(max-width: 450px) {
+                            font-size: 0.75rem;
+                        }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                    @media(max-width: 550px) {
+                        font-size: 0.75rem;
+                        padding: 0.5rem 0 0.5rem 0.5rem
+                    }
+                    @media(max-width: 450px) {
+                        font-size: 0.5rem;
                     }
                 }
                 div {
                     @include flexCenter();
+                    i {
+                        font-size: 1.5rem;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #2FB190;
+                            box-shadow:  2px 2px 10px #2FB190,
+                                        -2px -2px 10px #3CD3AD;
+                        }
+                        &:active {
+                            background-color: rgb(36, 134, 110);
+                            box-shadow:  2px 2px 10px #2FB190,
+                                        -2px -2px 10px #2FB190;
+                        }
+                        @media(max-width: 550px) {
+                            font-size: 1rem;
+                            margin: 0 0.5rem;
+                        }
+                        @media(max-width: 450px) {
+                            font-size: 1rem;
+                            padding: 0.75rem;
+                        }
+                    }
+                    
                 }
             }
             .scrollDown {
@@ -95,6 +173,11 @@
             .skills {
                 height: auto;
                 margin-right: 2rem;
+            }
+        }
+        @media(max-width: 700px) {
+            .skills {
+                margin-right: 1rem;
             }
         }
     }

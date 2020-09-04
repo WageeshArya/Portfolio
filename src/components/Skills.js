@@ -34,30 +34,59 @@ const Skills = () => {
       opacity: 0,
       stagger: 0.1
     })
-    gsap.from(".backend li", {
-      scrollTrigger: {
-        trigger: ".techSkills",
-        start: 'top center',
-        end: 'center center',
-        scrub: true,
-        toggleActions: 'play none none reverse'
-      },
-      y: 100,
-      opacity: 0,
-      stagger: 0.1
-    })
-    gsap.from(".otherTech li", {
-      scrollTrigger: {
-        trigger: ".techSkills",
-        start: 'top center',
-        end: 'center center',
-        scrub: true,
-        toggleActions: 'play none none reverse'
-      },
-      x: 75,
-      opacity: 0,
-      stagger: 0.1
-    })
+    if(window.innerWidth > 800) {
+      gsap.from(".backend li", {
+        scrollTrigger: {
+          trigger: ".techSkills",
+          start: 'top center',
+          end: 'center center',
+          scrub: true,
+          toggleActions: 'play none none reverse'
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1
+      })
+      gsap.from(".otherTech li", {
+        scrollTrigger: {
+          trigger: ".techSkills",
+          start: 'top center',
+          end: 'center center',
+          scrub: true,
+          toggleActions: 'play none none reverse'
+        },
+        x: 75,
+        opacity: 0,
+        stagger: 0.1
+      })
+    }
+    else {
+      gsap.from(".backend li", {
+        scrollTrigger: {
+          trigger: ".backend",
+          start: 'top-=150 center',
+          end: 'center center',
+          scrub: true,
+          toggleActions: 'play none none reverse'
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1
+      })
+      gsap.from(".otherTech li", {
+        scrollTrigger: {
+          trigger: ".otherTech",
+          start: 'top-=150 center',
+          end: 'center center',
+          scrub: true,
+          toggleActions: 'play none none reverse'
+        },
+        x: 75,
+        opacity: 0,
+        stagger: 0.1
+      })
+    }
+    
     // eslint-disable-next-line
   }, []);
 
@@ -129,7 +158,7 @@ const Skills = () => {
                 <p>MongoDB</p>
               </li>
               <li>
-                <img src={require('../icons/mongoose.png')} style={{width: '60px'}} alt="Mongoose"/>
+                <img src={require('../icons/mongoose.png')} style={{width: '90px'}} alt="Mongoose"/>
                 <p>Mongoose</p>
               </li>
             </ul>

@@ -12,7 +12,7 @@ const Intro = () => {
 
     const languageContext =  useContext(LanguageContext);
     const { language } = languageContext;
-    console.log(languageContext);
+
     gsap.registerPlugin({ TimelineLite });
     let tl = new TimelineLite();
     
@@ -59,6 +59,8 @@ const Intro = () => {
         // eslint-disable-next-line
     },[window.innerWidth]);
 
+    
+
     return (
         <Element id="intro" name="intro">
         <section className="intro">
@@ -81,8 +83,13 @@ const Intro = () => {
             <div className="introduction">
                 <div className="skills">
                     <div className="skillpanel">
-                        {/* <h4>Always eager to learn more!</h4> */}
-                        <h4>学びたくてたまらない。</h4>
+                        {
+                            language === 'english' ? 
+                            <h4>Always eager to learn more!</h4>
+                            :
+                            <h4>学びたくてたまらない。</h4>
+                        }
+                        
                         <Lottie options={
                             {
                                 loop: true,
@@ -119,7 +126,7 @@ const Intro = () => {
                             {language === 'english' ?
                                 'Keen attention to details.'
                                 :
-                                '詳細に集中。'
+                                '細かい所に注意。'
                             }
                             </h4>
                         <Lottie options={
@@ -136,7 +143,12 @@ const Intro = () => {
                 </div>
                 <div className="links">
                     <div className="linksDiv">
-                        <button>Download Resume
+                        <button>
+                        {languageContext.language === 'english' ?
+                            'Download Resume'
+                            :
+                            '履歴書をダウンロード'
+                        }
                         <i className="fas fa-download" /></button>
                         <div>
                             <i className="fab fa-github" />

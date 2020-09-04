@@ -13,6 +13,22 @@
       height: 4rem;
       width: 20vw;
       background-color: #FFFF00;
+      @media(max-width: 1200px) {
+        width: 25vw;
+      }
+      @media(max-width: 800px) {
+        width: 30vw;
+      }
+      @media(max-width: 700px) {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+        width: 32vw;
+      }
+      @media(max-width: 450px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        width: 35vw;
+      }
       span {
         position: absolute;
         color: #F9F871;
@@ -31,6 +47,12 @@
     @media(max-width: 1300px) {
       grid-template-columns: none;
     }
+    @media(max-width: 600px) {
+      width: 100%;
+    }
+    @media(max-width: 360px) {
+      margin: 0;
+    }
     .project {
       display: grid;
       margin: 4rem 3rem;
@@ -39,6 +61,24 @@
       border-radius: 50px;
       box-shadow:  20px 20px 60px #d9d9d9, 
                   -20px -20px 60px #ffffff;
+      @media(max-width: 500px) {
+        margin: 2rem;
+      }
+      @media(max-width: 450px) {
+        width: 80%;
+        padding: 1rem;
+        margin: 1rem auto;
+        margin-bottom: 2rem;
+      }
+      @media(max-width: 375px) {
+        padding: 0.5rem;
+        margin: 1rem auto;
+        margin-bottom: 2rem;
+      }
+      @media(max-width: 360px) {
+        
+        width: 90%;
+      }
       .video {
         @include flexCenter();
         flex-direction: column;
@@ -48,10 +88,16 @@
           font-size: 2.25rem;
           font-weight: 700;
           font-family: 'Roboto Slab', serif;
+          @media(max-width: 450px) {
+            font-size: 1.75rem;
+          }
         }
         video {
           height: 10rem;
           border: 3px solid black;
+          @media(max-width: 360px) {
+            height: 8rem;
+          }
         }
         .projectLinks {
           a {
@@ -86,13 +132,18 @@
       }
       .projectDetails {
         margin: 0 1rem;
-        
+        @media(max-width: 360px) {
+          margin: 0 0.5rem;
+        }
         .projectDetailsGrid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           .technologies, .features{
             h3 {
               font-weight: 500;
+              @media(max-width: 360px) {
+                font-size: 1.15rem;
+              }
             }
             ul {
               font-weight: 300;
@@ -100,8 +151,18 @@
               padding: 0;
               li {
                 font-size: 0.9rem;
+                @media(max-width: 360px) {
+                  font-size: 0.75rem;
+                }
               }
             }
+          }
+        }
+      }
+      .description {
+        p {
+          @media(max-width: 360px) {
+            font-size: 0.75rem;
           }
         }
       }

@@ -25,7 +25,6 @@ const Projects = () => {
 };
   
   useEffect(() => {
-    console.log(projectRefs.current);
     gsap.from(".projectsHeaderText span", {
       scrollTrigger: {
         trigger: '.projectsHeaderText',
@@ -36,16 +35,6 @@ const Projects = () => {
       height: 0,
       skewY: 7
     })
-    // gsap.from('.project', {
-    //   scrollTrigger: {
-    //     trigger: '.project',
-    //     start: 'top center',
-    //     end: 'center center',
-    //     // scrub: true,
-    //   },
-    //   opacity: 1,
-    //   duration: 
-    // })
 
     projectRefs.current.forEach((el, index) => {
       gsap.fromTo(el, 

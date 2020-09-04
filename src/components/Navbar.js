@@ -1,13 +1,14 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import LanguageContext from '../context/LanguageContext';
 import './Navbar.scss';
 import Scroll from 'react-scroll';
 import gsap, { TimelineLite } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import languageContext from '../context/LanguageContext';
 
 const Navbar = () => {
 
+
+    const [mobileExtended, setMobileExtended] = useState(false);
     const ScrollLink = Scroll.Link;
     const languageContext = useContext(LanguageContext);
 
@@ -61,12 +62,46 @@ const Navbar = () => {
             color: 'blue',
             duration: 1
         })
-        console.log(typeof window.innerWidth);
         // eslint-disable-next-line
     },[]);
 
+    const toggleNav = () => {
+        if(window.innerWidth < 700) {
+            setMobileExtended(!mobileExtended);
+            if(mobileExtended) {
+                gsap.to(".navLinks", {
+                    height: 0,
+                    ease: 'expo.inOut',
+                    display: 'hidden',
+                    opacity: 0
+                })
+                gsap.to("#moveSpan", {
+                    width: '60%'
+                })
+            }
+            else {
+                gsap.fromTo(".navLinks", {
+                    display: 'hidden',
+                    ease: 'expo.inOut',
+                    height: '0',
+                    opacity: 0
+                }, {
+                    display: 'flex',
+                    height: 'auto',
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'expo.inOut'
+                })
+                gsap.to("#moveSpan", {
+                    width: '100%',
+                    ease: 'expo.inOut'
+                })
+            }    
+        }
+        
+    }
+
     const changeLanguage = (e) => {
-        console.log(e.target.value);
         if(e.target.value === 'japanese') {
             languageContext.setJapanese();
         }
@@ -88,8 +123,8 @@ const Navbar = () => {
                         <span>A</span>
                     </ScrollLink>
                 </li>
-                <div className="navLinks hideNav">
-                    <li className="download"><a href={require('../resume/English.pdf')} download>
+                <div className="navLinks">
+                    <li className="download"><a href={require('../resume/English.pdf')} onClick={toggleNav} download>
                     {languageContext.language === 'english' ?
                         'Download Resume'
                         :
@@ -97,7 +132,7 @@ const Navbar = () => {
                     }
                     </a></li>
                     <li id="skillLink">
-                        <ScrollLink
+                        <ScrollLink onClick={toggleNav}
                         to="skills" 
                         spy={true} 
                         smooth={true} 
@@ -111,6 +146,7 @@ const Navbar = () => {
                     </li>
                     <li id="projectsLink">
                         <ScrollLink
+                        onClick={toggleNav}
                         to="projects" 
                         spy={true} 
                         smooth={true} 
@@ -123,7 +159,8 @@ const Navbar = () => {
                         </ScrollLink>
                     </li>
                     <li id="contactLink">
-                        <ScrollLink
+                        <ScrollLink 
+                        onClick={toggleNav}
                         to="contact" 
                         spy={true} 
                         smooth={true} 
@@ -136,13 +173,20 @@ const Navbar = () => {
                         </ScrollLink>
                     </li>
                     <li>
-                        <select name="language" id="language" onChange={changeLanguage}>
-                            <option value="english">English</option>
-                            <option value="japanese">日本語</option>
-                        </select>
+                        <div className="selectWrapper">
+                            <select name="language" id="language" onChange={changeLanguage}>
+                                <option value="english">English</option>
+                                <option value="japanese">日本語</option>
+                            </select>
+                        </div>
+                        
                     </li>
                 </div>
             </ul>
+            <div className="navBtn" onClick={toggleNav}>
+                <span></span>
+                <span id="moveSpan"></span>
+            </div>
         </nav>
     )
 }
