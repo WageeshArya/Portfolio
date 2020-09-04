@@ -17,6 +17,16 @@
         font-size: 2.5rem;
       }
     }
+    .emailSent {
+      position: fixed;
+      right: 2%;
+      top: 10%;
+      background-color: blue;
+      color: white;
+      font-weight: 700;
+      padding: 0 0.5rem;
+      animation: 2s showSent ease;
+    }
     .contactGrid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -70,7 +80,30 @@
         @media(max-width: 1300px) {
           height: 50%;
         }
+        div {
+          @media(max-width: 1300px) {
+            width: 60% !important;
+          }
+        }
       }
     }
+    @media(max-width: 700px) {
+      width: 80%;
+    }
+  }
+}
+
+@keyframes showSent {
+  0% {
+    opacity: 0;
+    right: 2%;
+  }
+  50% {
+    opacity: 1;
+    right: 7%;
+  }
+  100% {
+    opacity: 0;
+    right: 2%;
   }
 }

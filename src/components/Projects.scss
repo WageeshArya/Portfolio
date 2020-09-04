@@ -176,5 +176,13 @@
     h1 {
       background-color: #FFFF00;
     }
+    ul {
+      @media(max-width: 500px) {
+        font-size: 1.75rem;
+      }
+    }
+    @media(max-width: 700px) {
+      margin: 4rem 2rem;
+    }
   }
 }

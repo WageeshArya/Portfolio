@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import emailjs from 'emailjs-com';
+import { init } from 'emailjs-com';
 import './Contact.scss';
 import LanguageContext from '../context/LanguageContext';
 import Lottie from 'react-lottie';
@@ -7,11 +9,35 @@ import SendLottie from '../lottie/send.json';
 const Contact = () => {
 
   const languageContext = useContext(LanguageContext);
+  init("user_RRtlFpykyrvvahmEKEqox");
+
+  
+  const [emailSent, setEmailSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('gmail',
+      'template_w2tvl4a',
+      e.target,
+      'user_RRtlFpykyrvvahmEKEqox')
+      .then((result) => {
+        setEmailSent(true);
+        setTimeout(() => {
+          setEmailSent(false);
+        },2000);
+      }, (error) => {
+          console.log(error.text);
+      });
+    e.target.reset();
+  }
 
   return (
     <Element id="contact" name="contact">
     <section className="contactMe">
       <div className="contactDiv">
+        <div className={emailSent ? "emailSent" : "hide"}>
+          <p>Email Sent!</p>
+        </div>
         <div className="contactHeader">
           <h1>
           {languageContext.language === 'english' ?
@@ -22,7 +48,7 @@ const Contact = () => {
           </h1>
         </div>
         <div className="contactGrid">
-          <form>
+          <form onSubmit={sendEmail}>
             <div className="contactInput">
               <label htmlFor="name">
                 {languageContext.language === 'english' ?
@@ -31,7 +57,7 @@ const Contact = () => {
                   '名前'
                 }
               </label>
-                <input type="text" id="name" />
+                <input type="text" id="name" name="name" />
             </div>
             <div className="contactInput">
               <label htmlFor="email">
@@ -41,7 +67,7 @@ const Contact = () => {
                   'メール'
                 }
               </label>
-                <input type="email" id="email" />
+                <input type="email" id="email" name="email" required />
             </div>
             <div className="contactInput">
               <label htmlFor="message">
@@ -51,7 +77,7 @@ const Contact = () => {
                   'メッセージ'
                 }
               </label>
-                <input type="textbox" id="message" />  
+                <input type="textbox" id="message" name="message" required />  
             </div>
             <div className="contactSend">
               <input type="submit" value={
