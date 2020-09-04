@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 import './Skills.scss';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Element } from 'react-scroll';
 const Skills = () => {
+
+  const languageContext = useContext(LanguageContext);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -62,11 +65,25 @@ const Skills = () => {
     <Element id="skills" name="skills">
     <section className="techSkills">
       <div className="skillHeader">
-        <h1 className="skill-h1"><span>Skills</span></h1>
+        <h1 className="skill-h1">
+          <span>
+          {languageContext.language === 'english' ?
+            'Skills'
+            :
+            'スキル'
+          }
+        </span>
+      </h1>
       </div>
       <div className="skillDivs">
         <div className="tech">
-          <h3>Front End</h3>
+          <h3>
+            {languageContext.language === 'english' ?
+              'Front End'
+              :
+              'フロントエンド'
+            }
+          </h3>
           <ul className="frontend">
             <li>
               <img src={require('../icons/html.svg')} alt="HTML5"/>
@@ -91,7 +108,13 @@ const Skills = () => {
           </ul>
         </div>
         <div className="tech">
-          <h3>Back End</h3>
+          <h3>
+            {languageContext.language === 'english' ?
+              'Back End'
+              :
+              'バックエンド'
+            }
+          </h3>
             <ul className="backend">
               <li>
                 <img src={require('../icons/node.svg')} alt="NodeJS"/>
@@ -112,7 +135,13 @@ const Skills = () => {
             </ul>
         </div>
         <div className="tech">
-          <h3>Other Technologies</h3>
+          <h3>
+            {languageContext.language === 'english' ?
+              'Other Technologies'
+              :
+              '他の技術'
+            }
+          </h3>
           <ul className="otherTech">
             <li>
               <img src={require('../icons/jwt.svg')} alt="JSON Web Token"/>

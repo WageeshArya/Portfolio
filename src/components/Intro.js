@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 import './Intro.scss';
 import gsap, { TimelineLite } from 'gsap';
 import { Element } from 'react-scroll';
@@ -9,10 +10,15 @@ import Lottie3 from '../lottie/3.json';
 
 const Intro = () => {
 
+    const languageContext =  useContext(LanguageContext);
+    const { language } = languageContext;
+    console.log(languageContext);
     gsap.registerPlugin({ TimelineLite });
     let tl = new TimelineLite();
     
     useEffect(() => {
+        // languageContext.setJapanese();
+
         gsap.from(".introText div h2", {
             y: 100,
             duration: 0.75,
@@ -57,15 +63,26 @@ const Intro = () => {
         <Element id="intro" name="intro">
         <section className="intro">
             <div className="introText">
-                <h1>Hi! My name is <span className="bold">Wageesh Arya.</span></h1>
+                {language === 'english' ? 
+                    <h1>Hi! My name is <span className="bold">Wageesh Arya.</span></h1>
+                    :
+                    <h1>こんにちは！ <span className="bold">ワギーシ</span>です。</h1>
+                }
+                
                 <div>
-                    <h2>I'm a <span className="bold">full-stack developer.</span></h2>
+                    {language === 'english' ?
+                        <h2>I'm a <span className="bold">full-stack developer.</span></h2>
+                        :
+                        <h2><span className="bold">フルsタックデベロパアー</span>です。</h2>
+                    }
+                    
                 </div>
             </div>
             <div className="introduction">
                 <div className="skills">
                     <div className="skillpanel">
-                        <h4>Always eager to learn more!</h4>
+                        {/* <h4>Always eager to learn more!</h4> */}
+                        <h4>学びたくてたまらない。</h4>
                         <Lottie options={
                             {
                                 loop: true,
@@ -79,7 +96,13 @@ const Intro = () => {
                         
                     </div>
                     <div className="skillpanel">
-                        <h4>Always follow the best UI/UX practices.</h4>
+                        <h4>
+                            {language === 'english' ?
+                                'Always follow the best UI/UX practices.'
+                                :
+                                '最高なUI/UX方法。'
+                            }
+                            </h4>
                         <Lottie options={
                             {
                                 loop: true,
@@ -92,7 +115,13 @@ const Intro = () => {
                         }/>
                     </div>
                     <div className="skillpanel">
-                        <h4>Keen attention to details.</h4>
+                        <h4>
+                            {language === 'english' ?
+                                'Keen attention to details.'
+                                :
+                                '詳細に集中。'
+                            }
+                            </h4>
                         <Lottie options={
                             {
                                 loop: true,

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 import './Projects.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,6 +12,9 @@ import TheSoleStore from '../projects/thesolestore.mp4';
 const Projects = () => {
 
   gsap.registerPlugin(ScrollTrigger);
+
+  const languageContext = useContext(LanguageContext);
+
   const projectRefs = useRef([]);
   projectRefs.current = [];
 
@@ -72,7 +76,13 @@ const Projects = () => {
     <section className="Projects">
       <h1 className="projectsHeader">
         <div className="projectsHeaderText">
-          <span>My Projects</span>
+          <span>
+            {languageContext.language === 'english' ?
+              'My Projects'
+              :
+              'プロジェクト'
+            }
+          </span>
         </div>
       </h1>
       <div className="projectsDiv">
@@ -297,13 +307,49 @@ const Projects = () => {
           </div>
         </div>
         <div className="projectEnd">
-          <h1>Projects Overview</h1>
+          <h1>
+            {languageContext.language === 'english' ?
+              'Projects Overview'
+              :
+              'プロジェクト概要'
+            }
+          </h1>
           <ul>
-            <li>Fully Responsive.</li>
-            <li>Efficient code.</li>
-            <li>Fast loading times.</li>
-            <li>Intuitive UI.</li>
-            <li>Good UX.</li>
+            <li>
+              {languageContext.language === 'english' ?
+                'Fully Responsive'
+                :
+                'レスポンシブ。'
+              }
+            </li>
+            <li>
+            {languageContext.language === 'english' ?
+              'Efficient Code.'
+              :
+              '効率的なコード。'
+            }
+            </li>
+            <li>
+            {languageContext.language === 'english' ?
+              'Fast Loading Times.'
+              :
+              '短いロードの時間。'
+            }
+            </li>
+            <li>
+            {languageContext.language === 'english' ?
+              'Intuitive UI.'
+              :
+              '直感的なUI。'
+            }
+            </li>
+            <li>
+              {languageContext.language === 'english' ?
+                'Good UX.'
+                :
+                '簡単なUX。'
+              }
+            </li>
           </ul>
         </div>
       </div>

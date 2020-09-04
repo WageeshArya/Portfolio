@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 import './Navbar.scss';
 import Scroll from 'react-scroll';
 import gsap, { TimelineLite } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import languageContext from '../context/LanguageContext';
 
 const Navbar = () => {
 
     const ScrollLink = Scroll.Link;
+    const languageContext = useContext(LanguageContext);
 
     gsap.registerPlugin(ScrollTrigger);
     let tl = new TimelineLite();
@@ -61,6 +64,17 @@ const Navbar = () => {
         console.log(typeof window.innerWidth);
         // eslint-disable-next-line
     },[]);
+
+    const changeLanguage = (e) => {
+        console.log(e.target.value);
+        if(e.target.value === 'japanese') {
+            languageContext.setJapanese();
+        }
+        else {
+            languageContext.setEnglish();
+        }
+    }
+
     return (
         <nav>
             <ul>
@@ -75,14 +89,24 @@ const Navbar = () => {
                     </ScrollLink>
                 </li>
                 <div className="navLinks hideNav">
-                    <li className="download"><a href={require('../resume/English.pdf')} download>Download Resume</a></li>
+                    <li className="download"><a href={require('../resume/English.pdf')} download>
+                    {languageContext.language === 'english' ?
+                        'Download Resume'
+                        :
+                        '履歴書をダウンロード'
+                    }
+                    </a></li>
                     <li id="skillLink">
                         <ScrollLink
                         to="skills" 
                         spy={true} 
                         smooth={true} 
                         duration={25}>
-                            Skills
+                        {languageContext.language === 'english' ?
+                            'Skills'
+                            :
+                            'スキル'
+                        }
                         </ScrollLink>
                     </li>
                     <li id="projectsLink">
@@ -91,7 +115,11 @@ const Navbar = () => {
                         spy={true} 
                         smooth={true} 
                         duration={25}>
-                            Projects
+                        {languageContext.language === 'english' ?
+                            'Projects'
+                            :
+                            'プロジェクト'
+                        }
                         </ScrollLink>
                     </li>
                     <li id="contactLink">
@@ -100,11 +128,15 @@ const Navbar = () => {
                         spy={true} 
                         smooth={true} 
                         duration={25}>
-                            Contact Me
+                        {languageContext.language === 'english' ?
+                        'Contact Me'
+                        :
+                        '連絡'
+                    }
                         </ScrollLink>
                     </li>
                     <li>
-                        <select name="language" id="language">
+                        <select name="language" id="language" onChange={changeLanguage}>
                             <option value="english">English</option>
                             <option value="japanese">日本語</option>
                         </select>

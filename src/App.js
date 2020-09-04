@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 
+import LanguageState from './context/LanguageState';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import Skills from './components/Skills';
@@ -9,13 +10,15 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Intro />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+    <LanguageState>
+      <div className="App">
+        <Navbar />
+        <Intro />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
+    </LanguageState>
   );
 }
 
