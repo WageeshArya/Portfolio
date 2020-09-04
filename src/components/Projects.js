@@ -18,17 +18,26 @@ const Projects = () => {
   const projectRefs = useRef([]);
   projectRefs.current = [];
 
+  const overViewLi = useRef([]);
+  overViewLi.current = [];
+
   const addProjectRef = el => {
     if (el && !projectRefs.current.includes(el)) {
         projectRefs.current.push(el);
     }
-};
+  };
+
+  const addOverViewLi = el => {
+    if (el && !overViewLi.current.includes(el)) {
+        overViewLi.current.push(el);
+    }
+  }
   
   useEffect(() => {
     gsap.from(".projectsHeaderText span", {
       scrollTrigger: {
         trigger: '.projectsHeaderText',
-        start: 'top center',
+        start: 'top center+=100',
         end: 'bottom center-=100',
         scrub: true
       },
@@ -55,8 +64,28 @@ const Projects = () => {
           duration: 1
         }
       );
+    });
 
-});
+      overViewLi.current.forEach((el, index) => {
+        gsap.fromTo(el, 
+          {
+            autoAlpha: 0
+          },
+          {
+            autoAlpha: 1,
+            ease: 'expo.inOut',
+            scrollTrigger: {
+                id: `li-${index}`,
+                trigger: el,
+                start: 'top center+=100',
+                end: 'bottom center+=100',
+                scrub: true,
+                toggleActions: 'play none none reverse'
+            },
+            duration: 1
+          }
+        );
+      });
 
   }, []);
 
@@ -304,35 +333,35 @@ const Projects = () => {
             }
           </h1>
           <ul>
-            <li>
+            <li ref={addOverViewLi} id="li-0">
               {languageContext.language === 'english' ?
                 'Fully Responsive'
                 :
                 'レスポンシブ。'
               }
             </li>
-            <li>
+            <li ref={addOverViewLi} id="li-1">
             {languageContext.language === 'english' ?
               'Efficient Code.'
               :
               '効率的なコード。'
             }
             </li>
-            <li>
+            <li ref={addOverViewLi} id="li-2">
             {languageContext.language === 'english' ?
               'Fast Loading Times.'
               :
               '短いロードの時間。'
             }
             </li>
-            <li>
+            <li ref={addOverViewLi} id="li-3">
             {languageContext.language === 'english' ?
               'Intuitive UI.'
               :
               '直感的なUI。'
             }
             </li>
-            <li>
+            <li ref={addOverViewLi} id="li-4">
               {languageContext.language === 'english' ?
                 'Good UX.'
                 :

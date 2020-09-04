@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import LanguageContext from '../context/LanguageContext';
 import './Intro.scss';
 import gsap, { TimelineLite } from 'gsap';
+import Scroll from 'react-scroll';
 import { Element } from 'react-scroll';
 import Lottie from 'react-lottie';
 import Lottie1 from '../lottie/1.json';
@@ -12,6 +13,8 @@ const Intro = () => {
 
     const languageContext =  useContext(LanguageContext);
     const { language } = languageContext;
+
+    const ScrollLink = Scroll.Link;
 
     gsap.registerPlugin({ TimelineLite });
     let tl = new TimelineLite();
@@ -89,7 +92,6 @@ const Intro = () => {
                             :
                             <h4>学びたくてたまらない。</h4>
                         }
-                        
                         <Lottie options={
                             {
                                 loop: true,
@@ -149,16 +151,22 @@ const Intro = () => {
                             :
                             '履歴書をダウンロード'
                         }
-                        <i className="fas fa-download" /></button>
+                        <a href={require('../resume/English.pdf')} download><i className="fas fa-download" /></a></button>
                         <div>
-                            <i className="fab fa-github" />
+                            <a href="https://github.com/WageeshArya" target="_blank"><i className="fab fa-github" /></a>
                         </div>
                         <div>
-                            <i className="fab fa-linkedin" />
+                        <a href="https://www.linkedin.com/in/wageesh-a-463714101/" target="_blank"><i className="fab fa-linkedin" /></a>
                         </div>
                     </div>
                     <div className="scrollDown">
-                        <i className="fas fa-chevron-down" />
+                        <ScrollLink
+                        to="skills" 
+                        spy={true} 
+                        smooth={true} 
+                        duration={25}>
+                            <i className="fas fa-chevron-down" />
+                        </ScrollLink>
                     </div>
                 </div>
             </div>
