@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Intro.scss';
 import gsap, { TimelineLite } from 'gsap';
+import { Element } from 'react-scroll';
 import Lottie from 'react-lottie';
 import Lottie1 from '../lottie/1.json';
 import Lottie2 from '../lottie/2.json';
@@ -53,6 +54,7 @@ const Intro = () => {
     },[window.innerWidth]);
 
     return (
+        <Element id="intro" name="intro">
         <section className="intro">
             <div className="introText">
                 <h1>Hi! My name is <span className="bold">Wageesh Arya.</span></h1>
@@ -73,7 +75,7 @@ const Intro = () => {
                                     preserveAspectRatio: "xMidYMid slice"
                                 }
                             }
-                        } height={200} width={200}/>
+                        }/>
                         
                     </div>
                     <div className="skillpanel">
@@ -87,7 +89,7 @@ const Intro = () => {
                                     preserveAspectRatio: "xMidYMid slice"
                                 }
                             }
-                        } height={200} width={200}/>
+                        }/>
                     </div>
                     <div className="skillpanel">
                         <h4>Keen attention to details.</h4>
@@ -100,7 +102,7 @@ const Intro = () => {
                                     preserveAspectRatio: "xMidYMid slice"
                                 }
                             }
-                        } height={200} width={200}/>
+                        }/>
                     </div>
                 </div>
                 <div className="links">
@@ -120,6 +122,7 @@ const Intro = () => {
                 </div>
             </div>
         </section>
+        </Element>
     )
 }
 

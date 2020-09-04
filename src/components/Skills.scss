@@ -5,16 +5,27 @@
     padding-top: 10vh;
     margin-bottom: 1rem;
     font-family: 'Poppins', sans-serif;
-    
+    letter-spacing: 0.15rem;
+    overflow: hidden;
     @include flexCenter();
-    h1 {
-      text-decoration: underline;
-      text-align: center;
-      font-size: 3rem;
-      font-weight: 700;
-      background-color: orange;
-      display: inline;
-    }
+      .skill-h1 {
+        display: inline-block;
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: 700;
+        height: 5rem;
+        overflow: hidden;
+        background: #FFBB33;
+        width: 10vw;
+        span {
+          position: absolute;
+          // background-color: #FFBB33;
+          left: 50%;
+          text-decoration: underline;
+          overflow: hidden;
+          transform: translate(-50%,);
+        }
+      }
   }
   
   .skillDivs {
@@ -25,11 +36,12 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
     .tech {
       height: 100%;
       display: grid;
       &:nth-of-type(1), &:nth-last-of-type(2) {
-        border-right: 5px solid orange;
+        border-right: 5px solid #FFBB33;
       }
       h3 {
         font-size: 1.5rem;

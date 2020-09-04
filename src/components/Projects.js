@@ -1,19 +1,85 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Projects.scss';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Element } from 'react-scroll';
 import Homely from '../projects/homely.mp4';
 import DartChat from '../projects/dartchat.mp4';
 import RealWeather from '../projects/realweather.mp4';
 import Tetsuya from '../projects/tetsuyaizakaya.mp4';
 import TheSoleStore from '../projects/thesolestore.mp4';
 const Projects = () => {
+
+  gsap.registerPlugin(ScrollTrigger);
+  const projectRefs = useRef([]);
+  projectRefs.current = [];
+
+  const addProjectRef = el => {
+    if (el && !projectRefs.current.includes(el)) {
+        projectRefs.current.push(el);
+    }
+};
+  
+  useEffect(() => {
+    console.log(projectRefs.current);
+    gsap.from(".projectsHeaderText span", {
+      scrollTrigger: {
+        trigger: '.projectsHeaderText',
+        start: 'top center',
+        end: 'bottom center-=100',
+        scrub: true
+      },
+      height: 0,
+      skewY: 7
+    })
+    // gsap.from('.project', {
+    //   scrollTrigger: {
+    //     trigger: '.project',
+    //     start: 'top center',
+    //     end: 'center center',
+    //     // scrub: true,
+    //   },
+    //   opacity: 1,
+    //   duration: 
+    // })
+
+    projectRefs.current.forEach((el, index) => {
+      gsap.fromTo(el, 
+        {
+          autoAlpha: 0
+        },
+        {
+          autoAlpha: 1,
+          ease: 'expo.out',
+          scrollTrigger: {
+              id: `section-${index+1}`,
+              trigger: el,
+              start: 'top center+=100',
+              end: 'center-=150 center',
+              // scrub: true,
+              toggleActions: 'play none none reverse'
+          },
+          duration: 1
+        }
+      );
+
+});
+
+  }, []);
+
   return (
+    <Element id="projects" name="projects">
     <section className="Projects">
-      <h1 className="projectsHeader">My Projects</h1>
+      <h1 className="projectsHeader">
+        <div className="projectsHeaderText">
+          <span>My Projects</span>
+        </div>
+      </h1>
       <div className="projectsDiv">
-        <div className="project">
+        <div className="project" ref={addProjectRef} id="project-0">
           <div className="video">
             <h1>TheSoleStore</h1>
-            <video autoPlay loop src={TheSoleStore} />
+            <video autoPlay loop muted src={TheSoleStore} />
             <div className="projectLinks">
               <a href="https://thesolestore.herokuapp.com/" target="_blank">
                 <button>Visit Website</button>
@@ -60,10 +126,10 @@ const Projects = () => {
           </div>
           </div>
         </div>
-        <div className="project">
+        <div className="project" ref={addProjectRef} id="project-1">
           <div className="video">
             <h1>REALWeather</h1>
-            <video autoPlay loop src={RealWeather} />
+            <video autoPlay loop muted src={RealWeather} />
             <div className="projectLinks">
               <a href="https://nostalgic-volhard-d31503.netlify.app/" target="_blank">
                 <button>Visit Website</button>
@@ -106,10 +172,10 @@ const Projects = () => {
                 </p>
               </div>
         </div>
-        <div className="project">
+        <div className="project" ref={addProjectRef} id="project-2">
           <div className="video">
             <h1>DartChat</h1>
-              <video autoPlay loop src={DartChat} />
+              <video autoPlay loop muted src={DartChat} />
               <div className="projectLinks">
                 <a href="https://focused-villani-85fb7f.netlify.app/" target="_blank">
                   <button>Visit Website</button>
@@ -150,10 +216,10 @@ const Projects = () => {
               </div>
             </div>
         </div>
-        <div className="project">
+        <div className="project" ref={addProjectRef} id="project-3">
           <div className="video">
             <h1>Homely.</h1>
-            <video autoPlay loop src={Homely} />
+            <video autoPlay loop muted src={Homely} />
             <div className="projectLinks">
               <a href="https://musing-spence-f30ea9.netlify.app/" target="_blank">
                 <button>Visit Website</button>
@@ -191,10 +257,10 @@ const Projects = () => {
             <p>Website for Homely., a fictitious real estate company using React, Sass and Greensock GSAP Animations. Animations created for landing page reveal and page transition. Animations created to reveal elements on scroll. Scroller implemented for homes and testimonials.</p>
           </div>
         </div>
-        <div className="project">
+        <div className="project" ref={addProjectRef} id="project-4">
           <div className="video">
             <h1>Tetsuya Izakaya</h1>
-            <video autoPlay loop src={Tetsuya} />
+            <video autoPlay loop muted src={Tetsuya} />
             <div className="projectLinks">
               <a href="https://wizardly-meninsky-c34418.netlify.app/" target="_blank">
                 <button>Visit Website</button>
@@ -242,6 +308,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    </Element>
   )
 }
 

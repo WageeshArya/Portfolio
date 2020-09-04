@@ -1,16 +1,73 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Skills.scss';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Element } from 'react-scroll';
 const Skills = () => {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    gsap.from(".skill-h1 span", {
+      scrollTrigger: {
+        trigger: ".skill-h1 span",
+        start: 'top center+=200',
+        end: 'bottom top-=100',
+        scrub: true,
+        toggleActions: 'play none none reverse'
+      },
+      height: 0,
+      ease: 'power4.inOut'
+    })
+    gsap.from(".frontend li", {
+      scrollTrigger: {
+        trigger: ".techSkills",
+        start: 'top center',
+        end: 'center center',
+        scrub: true,
+        toggleActions: 'play none none reverse'
+      },
+      x: -75,
+      opacity: 0,
+      stagger: 0.1
+    })
+    gsap.from(".backend li", {
+      scrollTrigger: {
+        trigger: ".techSkills",
+        start: 'top center',
+        end: 'center center',
+        scrub: true,
+        toggleActions: 'play none none reverse'
+      },
+      y: 100,
+      opacity: 0,
+      stagger: 0.1
+    })
+    gsap.from(".otherTech li", {
+      scrollTrigger: {
+        trigger: ".techSkills",
+        start: 'top center',
+        end: 'center center',
+        scrub: true,
+        toggleActions: 'play none none reverse'
+      },
+      x: 75,
+      opacity: 0,
+      stagger: 0.1
+    })
+    // eslint-disable-next-line
+  }, []);
+
   return (
+    <Element id="skills" name="skills">
     <section className="techSkills">
       <div className="skillHeader">
-        <h1>Skills</h1>
-        <div className="skillOverlay"></div>
+        <h1 className="skill-h1"><span>Skills</span></h1>
       </div>
       <div className="skillDivs">
         <div className="tech">
           <h3>Front End</h3>
-          <ul>
+          <ul className="frontend">
             <li>
               <img src={require('../icons/html.svg')} alt="HTML5"/>
               <p>HTML5</p>
@@ -35,7 +92,7 @@ const Skills = () => {
         </div>
         <div className="tech">
           <h3>Back End</h3>
-            <ul>
+            <ul className="backend">
               <li>
                 <img src={require('../icons/node.svg')} alt="NodeJS"/>
                 <p>NodeJS</p>
@@ -56,7 +113,7 @@ const Skills = () => {
         </div>
         <div className="tech">
           <h3>Other Technologies</h3>
-          <ul>
+          <ul className="otherTech">
             <li>
               <img src={require('../icons/jwt.svg')} alt="JSON Web Token"/>
               <p>JSON Web Token</p>
@@ -83,6 +140,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+    </Element>
   )
 }
 

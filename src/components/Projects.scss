@@ -5,12 +5,32 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 3.5rem;
+    padding-top: 10vh;
+    margin-bottom: 0;
+    @include flexCenter();
+    .projectsHeaderText {
+      padding-top: 5vh;
+      height: 4rem;
+      width: 20vw;
+      background-color: #FFFF00;
+      span {
+        position: absolute;
+        color: #F9F871;
+        color: black;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+      }
+    }
   }
   .projectsDiv {
     display: grid;
     width: 85%;
     margin: 0 auto;
     grid-template-columns: repeat(2,1fr);
+    @media(max-width: 1300px) {
+      grid-template-columns: none;
+    }
     .project {
       display: grid;
       margin: 4rem 3rem;
@@ -45,7 +65,7 @@
               background-color: white;
               margin: 1rem 0.5rem;
               text-transform: uppercase;
-              transition: all .4s ease;
+              transition: all .3s ease;
               &:hover {
                 cursor: pointer;
                 color: white;
@@ -92,5 +112,8 @@
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    h1 {
+      background-color: #FFFF00;
+    }
   }
 }
