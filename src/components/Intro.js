@@ -70,14 +70,14 @@ const Intro = () => {
                 {language === 'english' ? 
                     <h1>Hi! My name is <span className="bold">Wageesh Arya.</span></h1>
                     :
-                    <h1>こんにちは！ <span className="bold">ワギーシ</span>です。</h1>
+                    <h1>初めまして！私は<span className="bold">ワギーシ</span>です。</h1>
                 }
                 
                 <div>
                     {language === 'english' ?
                         <h2>I'm a <span className="bold">full-stack developer.</span></h2>
                         :
-                        <h2><span className="bold">フルsタックデベロパアー</span>です。</h2>
+                        <h2><span className="bold">フルスタックデベロパアー</span>です。</h2>
                     }
                     
                 </div>
