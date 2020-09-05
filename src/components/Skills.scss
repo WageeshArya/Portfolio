@@ -21,7 +21,7 @@
         overflow: hidden;
         background: $orange;
         width: 10vw;
-        @media(min-width: 1440px) {
+        @media(min-height: 1440px) {
           font-size: 4rem;
           height: 5rem;
         }
@@ -43,7 +43,7 @@
           text-decoration: underline;
           overflow: hidden;
           transform: translate(-50%,);
-          @media(min-width: 1440px) {
+          @media(min-height: 1440px) {
             font-size: 5rem;
           }
         }
@@ -74,7 +74,7 @@
       }
       h3 {
         font-size: 1.5rem;
-        @media(min-width: 1440px) {
+        @media(min-height: 1440px) {
           font-size: 2.5rem;
         }
       }
@@ -88,11 +88,11 @@
           img {
             height: 50px;
             width: 50px;
-            @media(min-width: 2000px) {
+            @media(min-height: 2000px) {
               height: 150px;
               width: 150px;
             }
-            @media(min-width: 1440px) {
+            @media(min-height: 1440px) {
               height: 100px;
               width: 100px;
             }
