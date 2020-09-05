@@ -78,7 +78,7 @@ const Projects = () => {
                 id: `li-${index}`,
                 trigger: el,
                 start: 'top center+=100',
-                end: 'bottom center+=100',
+                end: 'bottom center+=175',
                 scrub: true,
                 toggleActions: 'play none none reverse'
             },
@@ -120,7 +120,13 @@ const Projects = () => {
           <div className="projectDetails">
             <div className="projectDetailsGrid">
               <div className="technologies">
-              <h3>Technologies Used</h3>
+              <h3>
+              {languageContext.language === 'english' ?
+                'Technologies used'
+                :
+                '使った技術'
+              }
+              </h3>
               <ul>
                 <li>JSX</li>
                 <li>Javascript</li>
@@ -136,7 +142,13 @@ const Projects = () => {
               </ul>
             </div>
             <div className="features">
-                <h3>Notable Features</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Notable Features'
+                    :
+                    '長所'
+                  }
+                </h3>
                 <ul>
                   <li>Created RESTful API</li>
                   <li>Full CRUD functionality</li>
@@ -170,7 +182,13 @@ const Projects = () => {
           <div className="projectDetails">
             <div className="projectDetailsGrid">
               <div className="technologies">
-                <h3>Technologies Used</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Technologies used'
+                    :
+                    '使った技術'
+                  }
+                </h3>
                 <ul>
                   <li>JSX</li>
                   <li>Javascript</li>
@@ -181,7 +199,13 @@ const Projects = () => {
                 </ul>
               </div>
               <div className="features">
-                <h3>Notable Features</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Notable Features'
+                    :
+                    '長所'
+                  }
+                </h3>
                 <ul>
                   <li>Used third party API</li>
                   <li>Used Axios to fetch data</li>
@@ -216,7 +240,13 @@ const Projects = () => {
             <div className="projectDetails">
               <div className="projectDetailsGrid">
                 <div className="technologies">
-                  <h3>Technologies Used</h3>
+                  <h3>
+                    {languageContext.language === 'english' ?
+                      'Technologies used'
+                      :
+                      '使った技術'
+                    }
+                  </h3>
                   <ul>
                     <li>JSX</li>
                     <li>Javascript</li>
@@ -228,7 +258,13 @@ const Projects = () => {
                   </ul>
                 </div>
                 <div className="features">
-                <h3>Notable Features</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Notable Features'
+                    :
+                    '長所'
+                  }
+                </h3>
                 <ul>
                   <li>Real-time messaging without reloading</li>
                   <li>User signup and login functionality</li>
@@ -260,7 +296,13 @@ const Projects = () => {
           <div className="projectDetails">
             <div className="projectDetailsGrid">
               <div className="technologies">
-                <h3>Technologies Used</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Technologies used'
+                    :
+                    '使った技術'
+                  }
+                </h3>
                 <ul>
                   <li>JSX</li>
                   <li>Javascript</li>
@@ -270,7 +312,13 @@ const Projects = () => {
                 </ul>
               </div>
               <div className="features">
-                <h3>Notable Features</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Notable Features'
+                    :
+                    '長所'
+                  }
+                </h3>
                 <ul>
                   <li>Website reveal animation</li>
                   <li>Page transition animation</li>
@@ -301,7 +349,13 @@ const Projects = () => {
           <div className="projectDetails">
             <div className="projectDetailsGrid">
               <div className="technologies">
-                <h3>Technologies Used</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Technologies used'
+                    :
+                    '使った技術'
+                  }
+                </h3>
                 <ul>
                   <li>HTML</li>
                   <li>Javascript</li>
@@ -309,7 +363,13 @@ const Projects = () => {
                 </ul>
               </div>
               <div className="features">
-                <h3>Notable Features</h3>
+                <h3>
+                  {languageContext.language === 'english' ?
+                    'Notable Features'
+                    :
+                    '長所'
+                  }
+                </h3>
                 <ul>
                   <li>Javascript gallery slider</li>
                   <li>Menu CSS Animations</li>

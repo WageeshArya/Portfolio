@@ -1,4 +1,5 @@
 @import '../App.scss';
+@import '../Variables.scss';
 .Projects {
   font-family: 'Poppins', sans-serif;
   .projectsHeader {
@@ -12,7 +13,11 @@
       padding-top: 5vh;
       height: 4rem;
       width: 20vw;
-      background-color: #FFFF00;
+      background-color: $yellow;
+      @media(min-width: 1440px) {
+        font-size: 6rem;
+        height: 5rem;
+      }
       @media(max-width: 1200px) {
         width: 25vw;
       }
@@ -31,8 +36,7 @@
       }
       span {
         position: absolute;
-        color: #F9F871;
-        color: black;
+        color: $black;
         left: 50%;
         transform: translate(-50%, -50%);
         overflow: hidden;
@@ -59,8 +63,8 @@
       border-radius: 20px;
       padding: 2rem;
       border-radius: 50px;
-      box-shadow:  20px 20px 60px #d9d9d9, 
-                  -20px -20px 60px #ffffff;
+      box-shadow:  20px 20px 60px $lightGray, 
+                  -20px -20px 60px $white;
       @media(max-width: 500px) {
         margin: 2rem;
       }
@@ -76,7 +80,6 @@
         margin-bottom: 2rem;
       }
       @media(max-width: 360px) {
-        
         width: 90%;
       }
       .video {
@@ -88,13 +91,19 @@
           font-size: 2.25rem;
           font-weight: 700;
           font-family: 'Roboto Slab', serif;
+          @media(min-width: 1440px) {
+            font-size: 3.5rem;
+          }
           @media(max-width: 450px) {
             font-size: 1.75rem;
           }
         }
         video {
           height: 10rem;
-          border: 3px solid black;
+          border: 3px solid $black;
+          @media(min-width: 1440px) {
+            height: 15rem;
+          }
           @media(max-width: 360px) {
             height: 8rem;
           }
@@ -105,26 +114,29 @@
               display: inline-block;
               padding: 0.5em 1em;
               text-decoration: none;
-              color: #67c5ff;
-              border: double 4px #67c5ff;
+              color: $lightBlue;
+              border: double 4px $lightBlue;
               border-radius: 3px;
-              background-color: white;
+              background-color: $white;
               margin: 1rem 0.5rem;
               text-transform: uppercase;
               transition: all .3s ease;
               &:hover {
                 cursor: pointer;
-                color: white;
-                background-color: #67c5ff; 
+                color: $white;
+                background-color: $lightBlue; 
               }
               &:focus {
                 outline: none;
               }
+              @media(min-width: 1440px) {
+                font-size: 1.25rem;
+              }
             }
             .githubBtn {
               &:hover {
-                background-color: #00D9A9;
-                border: double 4px #00D9A9;
+                background-color: $brightGreen;
+                border: double 4px $brightGreen;
               }
             }
           }
@@ -141,6 +153,9 @@
           .technologies, .features{
             h3 {
               font-weight: 500;
+              @media(min-width: 1440px) {
+                font-size: 2rem;
+              }
               @media(max-width: 360px) {
                 font-size: 1.15rem;
               }
@@ -151,6 +166,9 @@
               padding: 0;
               li {
                 font-size: 0.9rem;
+                @media(min-width: 1440px) {
+                  font-size: 1.5rem;
+                }
                 @media(max-width: 360px) {
                   font-size: 0.75rem;
                 }
@@ -161,6 +179,9 @@
       }
       .description {
         p {
+          @media(min-width: 1440px) {
+            font-size: 1.5rem;
+          }
           @media(max-width: 360px) {
             font-size: 0.75rem;
           }
@@ -174,9 +195,15 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     h1 {
-      background-color: #FFFF00;
+      background-color: $yellow;
+      @media(min-width: 1440px) {
+        font-size: 5rem;
+      }
     }
     ul {
+      @media(min-width: 1440px) {
+        font-size: 3rem;
+      }
       @media(max-width: 500px) {
         font-size: 1.75rem;
       }

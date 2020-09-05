@@ -20,7 +20,6 @@ const Intro = () => {
     let tl = new TimelineLite();
     
     useEffect(() => {
-        // languageContext.setJapanese();
 
         gsap.from(".introText div h2", {
             y: 100,

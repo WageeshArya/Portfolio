@@ -1,4 +1,5 @@
 @import '../App.scss';
+@import '../Variables.scss';
 .intro {
     height: 100vh;
     width: 100vw;
@@ -10,17 +11,23 @@
         transform: translate(-15%, -50%);
         font-family: 'Poppins', sans-serif;
         .bold {
-            font-weight: 500;
+            font-weight: 700;
         }
         h1 {
             font-size: 2rem;
             font-weight: 300;
+            @media(min-width: 1440px) {
+                font-size: 4rem;
+            }
         }
         div {
             overflow: hidden;
             h2 {
                 font-weight: 300;
                 margin-bottom: 0;
+                @media(min-width: 1440px) {
+                    font-size: 3rem;
+                }
             }
         }
     }
@@ -31,11 +38,11 @@
         width: 100vw;
         display: grid;
         grid-template-columns: 3fr 2fr;
-        background: #4CB8C4;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #3CD3AD, #4CB8C4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: $darkGreen;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, $green, $darkGreen);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, $green, $darkGreen); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         .skills {
-            color: rgb(41, 84, 88);
+            color: $darkBlueGreen;
             font-family: 'Poppins', sans-serif;
             text-align: center;
             @include flexCenter();
@@ -53,6 +60,9 @@
             .skillpanel {
                 @include skillpanels();
                 @include skillback();
+                @media(min-width: 1440px) {
+                    font-size: 2rem;
+                }
                 @media(max-width: 700px) {
                     padding: 0.5rem;
                 }
@@ -64,7 +74,7 @@
             }
         }
         .links {
-            color: rgb(41, 84, 88);
+            color: $darkBlueGreen;
             .linksDiv {
                 display: flex;
                 width: 75%;
@@ -79,7 +89,10 @@
                     height: auto;
                     border-radius: 50%;
                     font-size: 1.5rem;
-                    color: rgb(41, 84, 88);
+                    color: $darkBlueGreen;
+                    @media(min-width: 1440px) {
+                        font-size: 2rem;
+                    }
                     @media(max-width: 550px) {
                         font-size: 1rem;
                         margin: 0 0.5rem;
@@ -90,7 +103,7 @@
                 }
                 button {
                     text-align: center;
-                    background-color: #3CD3AD;
+                    background-color: $green;
                     border: none;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 700;
@@ -98,20 +111,23 @@
                     border-radius: 50px;
                     @include skillback();
                     i {
-                        box-shadow:  2px 2px 10px #419ca7, 
+                        box-shadow:  2px 2px 10px $midBlue, 
                          -2px -2px 10px #3CD3AD;
                         font-size: 1.25rem;
                         color: rgb(41, 84, 88);
                         &:hover {
                             cursor: pointer;
-                            background-color: #2FB190;
-                            box-shadow:  2px 2px 10px #2FB190,
-                                        -2px -2px 10px #3CD3AD;
+                            background-color: $lightGreen;
+                            box-shadow:  2px 2px 10px $lightGreen,
+                                        -2px -2px 10px $lighterGreen;
                         }
                         &:active {
                             background-color: rgb(36, 134, 110);
-                            box-shadow:  2px 2px 10px #2FB190,
-                                        -2px -2px 10px #2FB190;
+                            box-shadow:  2px 2px 10px $lightGreen,
+                                        -2px -2px 10px $lightGreen;
+                        }
+                        @media(min-width: 1440px) {
+                            font-size: 2rem;
                         }
                         @media(max-width: 550px) {
                             font-size: 1rem;
@@ -126,6 +142,11 @@
                     &:focus {
                         outline: none;
                     }
+                    @media(min-width: 1440px) {
+                        font-size: 1.5rem;
+                        padding: 1rem;
+                        border-radius: 100px;
+                    }
                     @media(max-width: 550px) {
                         font-size: 0.75rem;
                         padding: 0.5rem 0 0.5rem 0.5rem
@@ -138,17 +159,21 @@
                     @include flexCenter();
                     i {
                         font-size: 1.5rem;
-                        color: rgb(41, 84, 88);
+                        color: $darkBlueGreen;
                         &:hover {
                             cursor: pointer;
-                            background-color: #2FB190;
-                            box-shadow:  2px 2px 10px #2FB190,
-                                        -2px -2px 10px #3CD3AD;
+                            background-color: $lightGreen;
+                            box-shadow:  2px 2px 10px $lightGreen,
+                                        -2px -2px 10px $lighterGreen;
                         }
                         &:active {
                             background-color: rgb(36, 134, 110);
-                            box-shadow:  2px 2px 10px #2FB190,
-                                        -2px -2px 10px #2FB190;
+                            box-shadow:  2px 2px 10px $lightGreen,
+                                        -2px -2px 10px $lightGreen;
+                        }
+                        @media(min-width: 1440px) {
+                            font-size: 2.5rem;
+                            padding: 1.75rem;
                         }
                         @media(max-width: 550px) {
                             font-size: 1rem;
@@ -172,9 +197,12 @@
                 border-radius: 50%;
                 &:hover {
                     cursor: pointer;
-                    background-color: #2FB190;
+                    background-color: $lightGreen;
                 }
             }
+        }
+        @media(min-width: 1440px) {
+            font-size: 2rem;
         }
         @media(max-width: 1310px) {
             grid-template-columns: none;

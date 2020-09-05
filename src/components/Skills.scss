@@ -1,4 +1,5 @@
 @import  '../App.scss';
+@import '../Variables.scss';
 .techSkills {
   height: 100vh;
   @media(max-width: 800px) {
@@ -18,8 +19,12 @@
         font-weight: 700;
         height: 5rem;
         overflow: hidden;
-        background: #FFBB33;
+        background: $orange;
         width: 10vw;
+        @media(min-width: 1440px) {
+          font-size: 4rem;
+          height: 5rem;
+        }
         @media(max-width: 1200px) {
           width: 15vw;
         }
@@ -34,12 +39,15 @@
         }
         span {
           position: absolute;
-          // background-color: #FFBB33;
           left: 50%;
           text-decoration: underline;
           overflow: hidden;
           transform: translate(-50%,);
+          @media(min-width: 1440px) {
+            font-size: 5rem;
+          }
         }
+        
       }
   }
   
@@ -59,13 +67,16 @@
       height: 100%;
       display: grid;
       &:nth-of-type(1), &:nth-last-of-type(2) {
-        border-right: 5px solid #FFBB33;
+        border-right: 5px solid $orange;
         @media(max-width: 800px) {
           border: none;
         }
       }
       h3 {
         font-size: 1.5rem;
+        @media(min-width: 1440px) {
+          font-size: 2.5rem;
+        }
       }
       ul {
         height: 100%;
@@ -77,6 +88,14 @@
           img {
             height: 50px;
             width: 50px;
+            @media(min-width: 2000px) {
+              height: 150px;
+              width: 150px;
+            }
+            @media(min-width: 1440px) {
+              height: 100px;
+              width: 100px;
+            }
           }
       }
     }

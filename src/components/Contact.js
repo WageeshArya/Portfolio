@@ -101,7 +101,14 @@ const Contact = () => {
               }/>
           </div>
         </div>
-        
+        <div className="contactLinks">
+          <div>
+            <a href="https://github.com/WageeshArya" target="_blank"><i className="fab fa-github" /></a>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/in/wageesh-a-463714101/" target="_blank"><i className="fab fa-linkedin" /></a>
+          </div>
+        </div>
       </div>
     </section>
     </Element>
