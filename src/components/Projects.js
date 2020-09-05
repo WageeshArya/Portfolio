@@ -107,7 +107,7 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-0">
           <div className="video">
             <h1>TheSoleStore</h1>
-            <video autoPlay loop muted src={TheSoleStore} />
+            <video autoPlay loop muted playsinline src={TheSoleStore} />
             <div className="projectLinks">
               <a href="https://thesolestore.herokuapp.com/" target="_blank">
                 <button>Visit Website</button>
@@ -169,7 +169,7 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-1">
           <div className="video">
             <h1>REALWeather</h1>
-            <video autoPlay loop muted src={RealWeather} />
+            <video autoPlay loop muted playsinline src={RealWeather} />
             <div className="projectLinks">
               <a href="https://nostalgic-volhard-d31503.netlify.app/" target="_blank">
                 <button>Visit Website</button>
@@ -227,7 +227,7 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-2">
           <div className="video">
             <h1>DartChat</h1>
-              <video autoPlay loop muted src={DartChat} />
+              <video autoPlay loop muted playsinline src={DartChat} />
               <div className="projectLinks">
                 <a href="https://focused-villani-85fb7f.netlify.app/" target="_blank">
                   <button>Visit Website</button>
@@ -283,7 +283,7 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-3">
           <div className="video">
             <h1>Homely.</h1>
-            <video autoPlay loop muted src={Homely} />
+            <video autoPlay loop muted playsinline src={Homely} />
             <div className="projectLinks">
               <a href="https://musing-spence-f30ea9.netlify.app/" target="_blank">
                 <button>Visit Website</button>
@@ -336,7 +336,7 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-4">
           <div className="video">
             <h1>Tetsuya Izakaya</h1>
-            <video autoPlay loop muted src={Tetsuya} />
+            <video autoPlay loop muted playsinline src={Tetsuya} />
             <div className="projectLinks">
               <a href="https://wizardly-meninsky-c34418.netlify.app/" target="_blank">
                 <button>Visit Website</button>
