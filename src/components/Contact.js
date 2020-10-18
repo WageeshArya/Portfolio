@@ -103,10 +103,10 @@ const Contact = () => {
         </div>
         <div className="contactLinks">
           <div>
-            <a href="https://github.com/WageeshArya" target="_blank"><i className="fab fa-github" /></a>
+            <a href="https://github.com/WageeshArya" rel="noopener noreferrer" target="_blank"><i className="fab fa-github" /></a>
           </div>
           <div>
-            <a href="https://www.linkedin.com/in/wageesh-a-463714101/" target="_blank"><i className="fab fa-linkedin" /></a>
+            <a href="https://www.linkedin.com/in/wageesh-a-463714101/" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin" /></a>
           </div>
         </div>
       </div>

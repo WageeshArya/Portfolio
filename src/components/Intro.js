@@ -150,12 +150,12 @@ const Intro = () => {
                             :
                             '履歴書をダウンロード'
                         }
-                        <a href={require('../resume/English.pdf')} download><i className="fas fa-download" /></a></button>
+                        <a href={require('../resume/Wageesh_Arya-Resume.pdf')} download><i className="fas fa-download" /></a></button>
                         <div>
-                            <a href="https://github.com/WageeshArya" target="_blank"><i className="fab fa-github" /></a>
+                            <a href="https://github.com/WageeshArya" rel="noopener noreferrer" target="_blank"><i className="fab fa-github" /></a>
                         </div>
                         <div>
-                        <a href="https://www.linkedin.com/in/wageesh-a-463714101/" target="_blank"><i className="fab fa-linkedin" /></a>
+                        <a href="https://www.linkedin.com/in/wageesh-a-463714101/" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin" /></a>
                         </div>
                     </div>
                     <div className="scrollDown">

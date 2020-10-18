@@ -37,6 +37,7 @@
       span {
         position: absolute;
         color: $black;
+        height: 5rem;
         left: 50%;
         transform: translate(-50%, -50%);
         overflow: hidden;
@@ -140,6 +141,10 @@
               }
             }
           }
+        }
+        .warning {
+          font-size: 0.75rem;
+          color: #AA0000;
         }
       }
       .projectDetails {

@@ -107,15 +107,16 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-0">
           <div className="video">
             <h1>TheSoleStore</h1>
-            <video autoPlay loop muted playsinline src={TheSoleStore} />
+            <video autoPlay loop muted playsInline src={TheSoleStore} />
             <div className="projectLinks">
-              <a href="https://thesolestore.herokuapp.com/" target="_blank">
+              <a href="https://thesolestore.herokuapp.com/" rel="noopener noreferrer" target="_blank">
                 <button>Visit Website</button>
               </a>
-              <a href="https://github.com/WageeshArya/TheSoleStore" target="_blank">
+              <a href="https://github.com/WageeshArya/TheSoleStore" rel="noopener noreferrer" target="_blank">
                 <button className="githubBtn">Github</button>
               </a>
             </div>
+            {/* <p className="warning">This project has a large load up time since Heroku hosting unloads the website from their server when the website has been inactive.</p> */}
           </div>
           <div className="projectDetails">
             <div className="projectDetailsGrid">
@@ -169,12 +170,12 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-1">
           <div className="video">
             <h1>REALWeather</h1>
-            <video autoPlay loop muted playsinline src={RealWeather} />
+            <video autoPlay loop muted playsInline src={RealWeather} />
             <div className="projectLinks">
-              <a href="https://nostalgic-volhard-d31503.netlify.app/" target="_blank">
+              <a href="https://nostalgic-volhard-d31503.netlify.app/" rel="noopener noreferrer" target="_blank">
                 <button>Visit Website</button>
               </a>
-              <a href="https://github.com/WageeshArya/REALWeather" target="_blank">
+              <a href="https://github.com/WageeshArya/REALWeather" rel="noopener noreferrer" target="_blank">
                 <button className="githubBtn">Github</button>
               </a>
             </div>
@@ -219,7 +220,7 @@ const Projects = () => {
           <div className="description">
                 <p>
                   A Single Page React application using a weather API from
-                  <a href="http://openweathermap.org/" target="_blank"> openweather.org</a>
+                  <a href="http://openweathermap.org/" rel="noopener noreferrer" target="_blank"> openweather.org</a>
                   , using React Context and Axios to fetch data for 3 input options available.
                 </p>
               </div>
@@ -227,12 +228,12 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-2">
           <div className="video">
             <h1>DartChat</h1>
-              <video autoPlay loop muted playsinline src={DartChat} />
+              <video autoPlay loop muted playsInline src={DartChat} />
               <div className="projectLinks">
-                <a href="https://focused-villani-85fb7f.netlify.app/" target="_blank">
+                <a href="https://focused-villani-85fb7f.netlify.app/" rel="noopener noreferrer" target="_blank">
                   <button>Visit Website</button>
                 </a>
-              <a href="https://github.com/WageeshArya/DartChat" target="_blank">
+              <a href="https://github.com/WageeshArya/DartChat" rel="noopener noreferrer" target="_blank">
                 <button className="githubBtn">Github</button>
               </a>
             </div>
@@ -283,12 +284,12 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-3">
           <div className="video">
             <h1>Homely.</h1>
-            <video autoPlay loop muted playsinline src={Homely} />
+            <video autoPlay loop muted playsInline src={Homely} />
             <div className="projectLinks">
-              <a href="https://musing-spence-f30ea9.netlify.app/" target="_blank">
+              <a href="https://musing-spence-f30ea9.netlify.app/" rel="noopener noreferrer" target="_blank">
                 <button>Visit Website</button>
               </a>
-              <a href="https://github.com/WageeshArya/Homely." target="_blank">
+              <a href="https://github.com/WageeshArya/Homely." rel="noopener noreferrer" target="_blank">
                 <button className="githubBtn">Github</button>
               </a>
             </div>
@@ -336,12 +337,12 @@ const Projects = () => {
         <div className="project" ref={addProjectRef} id="project-4">
           <div className="video">
             <h1>Tetsuya Izakaya</h1>
-            <video autoPlay loop muted playsinline src={Tetsuya} />
+            <video autoPlay loop muted playsInline src={Tetsuya} />
             <div className="projectLinks">
-              <a href="https://wizardly-meninsky-c34418.netlify.app/" target="_blank">
+              <a href="https://wizardly-meninsky-c34418.netlify.app/" rel="noopener noreferrer" target="_blank">
                 <button>Visit Website</button>
               </a>
-              <a href="https://github.com/WageeshArya/Tetsuya-Izakaya" target="_blank">
+              <a href="https://github.com/WageeshArya/Tetsuya-Izakaya" rel="noopener noreferrer" target="_blank">
                 <button className="githubBtn">Github</button>
               </a>
             </div>

@@ -124,7 +124,7 @@ const Navbar = () => {
                     </ScrollLink>
                 </li>
                 <div className="navLinks">
-                    <li className="download"><a href={require('../resume/English.pdf')} onClick={toggleNav} download>
+                    <li className="download"><a href={require('../resume/Wageesh_Arya-Resume.pdf')} onClick={toggleNav} download>
                     {languageContext.language === 'english' ?
                         'Download Resume'
                         :
