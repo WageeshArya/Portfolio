@@ -84,6 +84,13 @@ nav {
                 }
                 
             }
+            #workLink {
+                a {
+                    &:hover {
+                        background-color:$silver;
+                    }
+                }
+            }
             #projectsLink {
                 a {
                     &:hover {

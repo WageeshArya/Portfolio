@@ -1,0 +1,186 @@
+@import '../App.scss';
+@import '../Variables.scss';
+.Work {
+  .workHeader {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    @include flexCenter();
+    .work-h1 {
+      padding-top: 5vh;
+      height: 3.5rem;
+      width: 14vw;
+      font-size: 4.5rem;
+      background-color: $silver;
+      @media(min-height: 1440px) {
+        font-size: 6rem;
+        height: 7rem;
+      }
+      @media(max-width: 1200px) {
+        width: 25vw;
+      }
+      @media(max-width: 800px) {
+        width: 30vw;
+      }
+      @media(max-width: 700px) {
+        font-size: 3.5rem;
+        padding-top: 3.5rem;
+        padding-bottom: 1rem;
+        height: 1rem;
+        width: 18vw;
+      }
+      @media(max-width: 450px) {
+        // font-size: 1.5rem;
+        // height: 0.25rem;
+        // width: 15vw;
+      }
+      span {
+        position: absolute;
+        color: $black;
+        height: 6rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+      }
+    }
+  }
+  .work {
+    margin: 4rem auto;
+    border-radius: 20px;
+    padding: 2rem;
+    border-radius: 50px;
+    width: 50%;
+    box-shadow:  20px 20px 60px $lightGray, 
+                -20px -20px 60px $white;
+    @media(max-width: 950px) {
+      width: 75%;
+    }
+    @media(max-width: 500px) {
+      margin: 2rem auto;
+      width: 80%;
+    }
+    @media(max-width: 450px) {
+      
+      padding: 1rem;
+      margin: 1rem auto;
+      margin-bottom: 2rem;
+    }
+    @media(max-width: 375px) {
+      padding: 0.5rem;
+      margin: 1rem auto;
+      margin-bottom: 2rem;
+    }
+    @media(max-width: 360px) {
+      width: 90%;
+    }
+    .video {
+      @include flexCenter();
+      flex-direction: column;
+      h1 {
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 2.25rem;
+        font-weight: 700;
+        font-family: 'Roboto Slab', serif;
+        @media(min-height: 1440px) {
+          font-size: 3.5rem;
+        }
+        @media(max-width: 450px) {
+          font-size: 1.75rem;
+        }
+      }
+      video {
+        // height: 10rem;
+        border: 3px solid $black;
+        width: 75%;
+        @media(min-height: 1440px) {
+          height: 15rem;
+        }
+        @media(max-width: 360px) {
+          height: 8rem;
+        }
+      }
+      .projectLinks {
+        a {
+          button {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            color: $lightBlue;
+            border: double 4px $lightBlue;
+            border-radius: 3px;
+            background-color: $white;
+            margin: 1rem 0.5rem;
+            text-transform: uppercase;
+            transition: all .3s ease;
+            &:hover {
+              cursor: pointer;
+              color: $white;
+              background-color: $lightBlue; 
+            }
+            &:focus {
+              outline: none;
+            }
+            @media(min-height: 1440px) {
+              font-size: 1.25rem;
+            }
+          }
+          .githubBtn {
+            &:hover {
+              background-color: $brightGreen;
+              border: double 4px $brightGreen;
+            }
+          }
+        }
+      }
+    }
+    .projectDetails {
+      font-family: 'Poppins', sans-serif;
+      margin: 0 1rem;
+      @media(max-width: 360px) {
+        margin: 0 0.5rem;
+      }
+      .projectDetailsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .technologies, .features{
+          h3 {
+            font-weight: 500;
+            @media(min-height: 1440px) {
+              font-size: 2rem;
+            }
+            @media(max-width: 360px) {
+              font-size: 1.15rem;
+            }
+          }
+          ul {
+            font-weight: 300;
+            list-style: none;
+            padding: 0;
+            li {
+              font-size: 0.9rem;
+              @media(min-height: 1440px) {
+                font-size: 1.5rem;
+              }
+              @media(max-width: 360px) {
+                font-size: 0.75rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .description {
+      p {
+        @media(min-height: 1440px) {
+          font-size: 1.5rem;
+        }
+        @media(max-width: 360px) {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+  
+}

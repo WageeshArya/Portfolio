@@ -144,6 +144,19 @@ const Navbar = () => {
                         }
                         </ScrollLink>
                     </li>
+                    <li id="workLink">
+                        <ScrollLink onClick={toggleNav}
+                        to="work" 
+                        spy={true} 
+                        smooth={true} 
+                        duration={25}>
+                        {languageContext.language === 'english' ?
+                            'Work'
+                            :
+                            '仕事'
+                        }
+                        </ScrollLink>
+                    </li>
                     <li id="projectsLink">
                         <ScrollLink
                         onClick={toggleNav}
