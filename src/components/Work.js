@@ -37,7 +37,7 @@ const Work = () => {
         </div>
         <div className="work">
             <div className="video">
-              <h1>TheSoleStore</h1>
+              <h1>The Work In Progress (W.I.P.)</h1>
               <video autoPlay loop muted playsInline src={WIP} />
               <div className="projectLinks">
                 <a href="http://thewip.in/" rel="noopener noreferrer" target="_blank">
