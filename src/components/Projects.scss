@@ -54,7 +54,7 @@
     width: 85%;
     margin: 0 auto;
     grid-template-columns: repeat(2,1fr);
-    @media(max-width: 1300px) {
+    @media(max-width: 1000px) {
       grid-template-columns: none;
     }
     @media(max-width: 600px) {
