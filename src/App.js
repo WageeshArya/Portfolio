@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
+    // starting anew
     <LanguageState>
       <div className="App">
         <Navbar />
