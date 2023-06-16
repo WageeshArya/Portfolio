@@ -63,6 +63,26 @@
     @media(max-width: 360px) {
       margin: 0;
     }
+    .underMaintenance {
+      .maintenance {
+        background-color: #EEE;
+        color: #999;
+        h4 {
+          color: #f03131;
+          margin: 0.25rem 0;
+        }
+        h1 {
+          margin-top: 0 !important;
+        }
+        button:disabled {
+          padding: 0.5em 1em;
+          background-color: gray;
+          border: double 4px darkgray;
+          color: darkgray;
+          text-transform: uppercase;
+        }
+      }
+    }
     .project {
       display: grid;
       margin: 4rem 3rem;

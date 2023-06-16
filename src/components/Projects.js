@@ -104,67 +104,67 @@ const Projects = () => {
         </div>
       </h1>
       <div className="projectsDiv">
-        <div className="project" ref={addProjectRef} id="project-0">
-          <div className="video">
-            <h1>TheSoleStore</h1>
-            <video autoPlay loop muted playsInline src={TheSoleStore} />
-            <div className="projectLinks">
-              <a href="https://thesolestore.herokuapp.com/" rel="noopener noreferrer" target="_blank">
-                <button>Visit Website</button>
-              </a>
-              <a href="https://github.com/WageeshArya/TheSoleStore" rel="noopener noreferrer" target="_blank">
-                <button className="githubBtn">Github</button>
-              </a>
+        <div className="underMaintenance">
+          <div className="project maintenance" id="project-0">
+            <div className="video">
+              <h4>Currently under maintenance(until July, 2023)</h4>
+              <h1>TheSoleStore</h1>
+              <video autoPlay loop muted playsInline src={TheSoleStore} />
+              <div className="projectLinks">
+                <button disabled>Visit Website</button>
+                <a href="https://github.com/WageeshArya/TheSoleStore" rel="noopener noreferrer" target="_blank">
+                  <button className="githubBtn">Github</button>
+                </a>
+              </div>
             </div>
-            {/* <p className="warning">This project has a large load up time since Heroku hosting unloads the website from their server when the website has been inactive.</p> */}
-          </div>
-          <div className="projectDetails">
-            <div className="projectDetailsGrid">
-              <div className="technologies">
-              <h3>
-              {languageContext.language === 'english' ?
-                'Technologies used'
-                :
-                '使った技術'
-              }
-              </h3>
-              <ul>
-                <li>JSX</li>
-                <li>Javascript</li>
-                <li>CSS</li>
-                <li>React</li>
-                <li>Redux</li>
-                <li>Fetch API</li>
-                <li>NodeJS</li>
-                <li>ExpressJS</li>
-                <li>MongoDB</li>
-                <li>Mongoose</li>
-                <li>Amazon Web Services</li>
-              </ul>
-            </div>
-            <div className="features">
+            <div className="projectDetails">
+              <div className="projectDetailsGrid">
+                <div className="technologies">
                 <h3>
-                  {languageContext.language === 'english' ?
-                    'Notable Features'
-                    :
-                    '長所'
-                  }
+                {languageContext.language === 'english' ?
+                  'Technologies used'
+                  :
+                  '使った技術'
+                }
                 </h3>
                 <ul>
-                  <li>Created RESTful API</li>
-                  <li>Full CRUD functionality</li>
-                  <li>User Signup and Login</li>
-                  <li>Cart functionality</li>
+                  <li>JSX</li>
+                  <li>Javascript</li>
+                  <li>CSS</li>
+                  <li>React</li>
                   <li>Redux</li>
-                  <li>Admin dashboard</li>
-                  <li>Amazon Web Services for image hosting</li>
-                  <li>Fully responsive</li>
+                  <li>Fetch API</li>
+                  <li>NodeJS</li>
+                  <li>ExpressJS</li>
+                  <li>MongoDB</li>
+                  <li>Mongoose</li>
+                  <li>Amazon Web Services</li>
                 </ul>
               </div>
-          </div>
-          <div className="description">
-            <p>A MERN (MongoDB, ExpressJS, React/Redux, Node) stack shoe store with custom created RESTful API. CRUD operations available for product information in admin dashboard. User and admin passwords are encrypted on the backend. Images uploaded are stored using AWS. Cart and previous orders management functionality available to users.</p>
-          </div>
+              <div className="features">
+                  <h3>
+                    {languageContext.language === 'english' ?
+                      'Notable Features'
+                      :
+                      '長所'
+                    }
+                  </h3>
+                  <ul>
+                    <li>Created RESTful API</li>
+                    <li>Full CRUD functionality</li>
+                    <li>User Signup and Login</li>
+                    <li>Cart functionality</li>
+                    <li>Redux</li>
+                    <li>Admin dashboard</li>
+                    <li>Amazon Web Services for image hosting</li>
+                    <li>Fully responsive</li>
+                  </ul>
+                </div>
+            </div>
+            <div className="description">
+              <p>A MERN (MongoDB, ExpressJS, React/Redux, Node) stack shoe store with custom created RESTful API. CRUD operations available for product information in admin dashboard. User and admin passwords are encrypted on the backend. Images uploaded are stored using AWS. Cart and previous orders management functionality available to users.</p>
+            </div>
+            </div>
           </div>
         </div>
         <div className="project" ref={addProjectRef} id="project-1">
@@ -173,10 +173,10 @@ const Projects = () => {
             <video autoPlay loop muted playsInline src={RealWeather} />
             <div className="projectLinks">
               <a href="https://nostalgic-volhard-d31503.netlify.app/" rel="noopener noreferrer" target="_blank">
-                <button>Visit Website</button>
+                <button disabled>Visit Website</button>
               </a>
               <a href="https://github.com/WageeshArya/REALWeather" rel="noopener noreferrer" target="_blank">
-                <button className="githubBtn">Github</button>
+                <button disabled className="githubBtn">Github</button>
               </a>
             </div>
           </div>
